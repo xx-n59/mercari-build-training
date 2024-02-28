@@ -8,7 +8,7 @@ RUN addgroup -S mercari && adduser -S trainee -G mercari
 
 WORKDIR /app
 
-COPY . /app/
+COPY ./go /app/
 RUN mv db /db && chown -R trainee:mercari /db
 
 RUN go mod tidy
