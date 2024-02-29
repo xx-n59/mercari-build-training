@@ -6,7 +6,7 @@ FROM golang:1.22.0-alpine3.19
 RUN addgroup -S mercari && adduser -S trainee -G mercari
 # RUN chown -R trainee:mercari /path/to/db
 
-WORKDIR /app
+WORKDIR /go/app/app
 
 COPY . /app/
 RUN mv db /db && chown -R trainee:mercari /db

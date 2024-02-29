@@ -84,7 +84,7 @@ func addItem(c echo.Context) error {
     }
 
 	//DBに接続
-	db, err := sql.Open("sqlite3", "./db/mercari.sqlite3")
+	db, err := sql.Open("sqlite3", "db/mercari.sqlite3")
 	if err != nil {
 		res := Response{Message: "Error Connecting to database"}
 		return c.JSON(http.StatusInternalServerError, res)
