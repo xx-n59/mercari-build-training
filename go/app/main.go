@@ -84,7 +84,7 @@ func addItem(c echo.Context) error {
     }
 
 	//DBに接続
-	db, err := sql.Open("sqlite3", "../db/mercari.sqlite3")
+	db, err := sql.Open("sqlite3", "db/mercari.sqlite3")
 	if err != nil {
 		res := Response{Message: "Error Connecting to database"}
 		return c.JSON(http.StatusInternalServerError, res)
@@ -131,7 +131,7 @@ func addItem(c echo.Context) error {
 
 func getAllItem(c echo.Context) error {
 	//db接続
-	db, err := sql.Open("sqlite3", "../db/mercari.sqlite3")
+	db, err := sql.Open("sqlite3", "./db/mercari.sqlite3")
 	if err != nil {
 		return err
 	}
@@ -216,7 +216,7 @@ func getItemById(c echo.Context) error {
 
 func getItemByKeyword(c echo.Context) error {
 	//DBとの接続
-	db, err := sql.Open("sqlite3", "../db/mercari.sqlite3")
+	db, err := sql.Open("sqlite3", "./db/mercari.sqlite3")
 	if err != nil {
 		res := Response{Message: "Error connecting to the database"}
     	return c.JSON(http.StatusInternalServerError, res)
